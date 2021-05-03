@@ -1,0 +1,6 @@
+# @package _group_
+_target_: model.dncnn.DnCNN
+lr: 0.0003
+channels: 1
+num_features: 64 
+num_layers: 3

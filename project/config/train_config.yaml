@@ -1,0 +1,13 @@
+defaults:
+  - model: dncnn_small
+  - data: test_dummy_mnist
+pl_trainer:
+  max_epochs: 20
+  gpus: 1
+  val_check_interval: 300
+  limit_val_batches: 5  # only do validation check on 5 batches
+seed: 1234
+processing_dir: './processing/train'
+hydra:
+  run:
+    dir: ${processing_dir}

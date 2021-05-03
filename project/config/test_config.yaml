@@ -1,0 +1,11 @@
+defaults:
+  - model: dncnn_small
+  - data: train_dummy_mnist
+pl_trainer:
+  gpus: 1
+seed: 1234
+processing_dir: './processing/test'
+checkpoint_path: ~ # placeholder for pretrained checkpoint
+hydra:
+  run:
+    dir: ${processing_dir}

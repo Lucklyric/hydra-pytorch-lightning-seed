@@ -1,0 +1,7 @@
+# @package _group_
+_target_: data.mnist_data_module.DummyMNISTDataModule
+test_batch_size: 256
+noise_level: 0.3
+test_num_workers: 2
+train: False
+data_dir: /tmp/mnist/
