@@ -65,6 +65,21 @@ python train.py \
     processing_dir='./processing/train/dncnn_mid_mnist/' \
 ```
 
+### Resume a training
+Specify a flag of lightning trainer 
+```bash
+python train.py \
+    model=dncnn_small \
+    model.num_features=32 \
+    model.num_layers=5 \
+    +pl_trainer.benchmark=True \
+    pl_trainer.max_epochs=1000 \
+    +pl_trainer.resume_from_checkpoint=$PWD'/processing/train/dncnn_mid_mnist/lightning_logs/version_0/checkpoints/epoch\=19-step\=8450.ckpt' \
+    data=train_dummy_mnist \
+    processing_dir='./processing/train/dncnn_mid_mnist_res/' \
+```bash
+
+
 ### Testing
 Test with pretrained checkpoint file after training 
 
