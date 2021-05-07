@@ -77,7 +77,7 @@ python train.py \
     +pl_trainer.resume_from_checkpoint=$PWD'/processing/train/dncnn_mid_mnist/lightning_logs/version_0/checkpoints/epoch\=19-step\=8450.ckpt' \
     data=train_dummy_mnist \
     processing_dir='./processing/train/dncnn_mid_mnist_res/' \
-```bash
+```
 
 
 ### Testing
