@@ -9,20 +9,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pytorch_lightning as pl
 import torch
-import torch
-import torch.nn as nn
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.nn.init as init
 import torch.optim as optim
-
 from mrc_insar_common.util.pt.init import weight_init
 
 logger = logging.getLogger(__name__)
 
 
 class DnCNN(pl.LightningModule):
-
     def __init__(self,
                  lr=0.0003,
                  channels=3,
@@ -127,12 +123,10 @@ class DnCNN(pl.LightningModule):
         noisy = x['noisy']
         with torch.no_grad():
             out = noisy - self.forward(noisy)
-            out_np = out.detach().cpu().numpy();
-            clean_np = clean.detach().cpu().numpy();
+            out_np = out.detach().cpu().numpy()
+            clean_np = clean.detach().cpu().numpy()
             mse = np.square(out_np - clean_np).mean()
-            metric_dict = {
-                'mse': mse 
-            }
+            metric_dict = {'mse': mse}
             self.log_dict(metric_dict)
         return mse
 

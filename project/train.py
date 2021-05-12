@@ -4,12 +4,13 @@
 # Author: Alvin(Xinyao) Sun <xinyao1@ualberta.ca>
 # Date  : 02.05.2021
 import logging
-
-import hydra
-from omegaconf import DictConfig, OmegaConf
-import pytorch_lightning as pl
 import os
 import sys
+
+import hydra
+import pytorch_lightning as pl
+from omegaconf import DictConfig, OmegaConf
+
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 
 log = logging.getLogger(__name__)
@@ -25,7 +26,6 @@ def main(cfg: DictConfig):
     # ------------
     data_module = hydra.utils.instantiate(cfg.data)
 
-
     # ------------
     # model
     # ------------
@@ -38,7 +38,9 @@ def main(cfg: DictConfig):
     log.info('run training...')
     train_dataloader = data_module.train_dataloader()
     val_dataloader = data_module.val_dataloader()
-    trainer.fit(model, train_dataloader=train_dataloader, val_dataloaders=[val_dataloader])
+    trainer.fit(model,
+                train_dataloader=train_dataloader,
+                val_dataloaders=[val_dataloader])
 
 
 if __name__ == '__main__':

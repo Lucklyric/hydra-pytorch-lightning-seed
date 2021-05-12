@@ -45,7 +45,7 @@ python train.py \
     data=train_dummy_mnist \
     processing_dir='./processing/train/dncnn_large_mnist/' \
 ```
-Train with CLI custom configs by overriding existing configs. [hydra override grammar](https://hydra.cc/docs/advanced/override_grammar/basic)  
+Train with CLI custom configs by overriding existing configs. [hydra override grammar](https://hydra.cc/docs/advanced/override_grammar/basic)
 ```bash
 # override existing config in yaml file
 python train.py \
@@ -66,7 +66,7 @@ python train.py \
 ```
 
 ### Resume a training
-Specify a flag of lightning trainer 
+Specify a flag of lightning trainer
 ```bash
 python train.py \
     model=dncnn_small \
@@ -81,7 +81,7 @@ python train.py \
 
 
 ### Testing
-Test with pretrained checkpoint file after training 
+Test with pretrained checkpoint file after training
 
 ```bash
 # Recommend to use absolute path for checkpoint_path then you do not need extract $PWD

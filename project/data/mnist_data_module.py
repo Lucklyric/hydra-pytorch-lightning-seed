@@ -6,8 +6,8 @@
 import logging
 
 import numpy as np
-from pytorch_lightning import LightningDataModule
 import torch
+from pytorch_lightning import LightningDataModule
 from torch.utils.data import random_split
 from torchvision.datasets.mnist import MNIST
 
@@ -23,7 +23,6 @@ def worker_init_fn(worker_id):
 
 
 class DummyMNISTWrapper(torch.utils.data.Dataset):
-
     def __init__(self, wrapped_dataset, noise_level=0.1, *args, **kwargs):
         self.base_dataset = wrapped_dataset
         self.noise_level = noise_level
@@ -37,11 +36,13 @@ class DummyMNISTWrapper(torch.utils.data.Dataset):
         noisy = np.random.normal(0, scale=self.noise_level,
                                  size=clean.shape) + clean
 
-        return {'clean': clean.astype(np.float32), 'noisy': noisy.astype(np.float32)}
+        return {
+            'clean': clean.astype(np.float32),
+            'noisy': noisy.astype(np.float32)
+        }
 
 
 class DummyMNISTDataModule(LightningDataModule):
-
     def __init__(self,
                  train_batch_size=1,
                  val_batch_size=1,
