@@ -2,7 +2,6 @@ name: mlseed
 channels:
   - pytorch
   - defaults
-  - conda-forge
 dependencies:
   - _libgcc_mutex=0.1=main
   - argon2-cffi=20.1.0=py36h27cfd23_1
@@ -122,7 +121,6 @@ dependencies:
   - torchvision=0.9.1=py36_cu102
   - tornado=6.1=py36h27cfd23_0
   - traitlets=4.3.3=py36_0
-  - typing_extensions=3.7.4.3=pyha847dfd_0
   - wcwidth=0.2.5=py_0
   - webencodings=0.5.1=py36_1
   - wheel=0.36.2=pyhd3eb1b0_0
@@ -133,23 +131,53 @@ dependencies:
   - zlib=1.2.11=h7b6447c_3
   - zstd=1.4.9=haebb681_0
   - pip:
+    - absl-py==0.12.0
     - aiohttp==3.7.4.post0
     - antlr4-python3-runtime==4.8
+    - appdirs==1.4.4
     - async-timeout==3.0.1
+    - cachetools==4.2.2
+    - cfgv==3.2.0
+    - chardet==4.0.0
+    - distlib==0.3.1
+    - filelock==3.0.12
     - fsspec==2021.4.0
     - future==0.18.2
+    - google-auth==1.30.0
+    - google-auth-oauthlib==0.4.4
     - greenlet==1.0.0
+    - grpcio==1.37.1
     - hydra-core==1.0.6
+    - identify==2.2.4
+    - idna==2.10
     - idna-ssl==1.1.0
     - importlib-metadata==4.0.1
     - importlib-resources==5.1.2
+    - markdown==3.3.4
     - mrc-insar-common==0.1.1
     - msgpack==1.0.2
     - multidict==5.1.0
+    - nodeenv==1.6.0
+    - oauthlib==3.1.0
     - omegaconf==2.0.6
+    - pre-commit==2.12.1
+    - protobuf==3.16.0
+    - pyasn1==0.4.8
+    - pyasn1-modules==0.2.8
     - pynvim==0.4.3
     - pytorch-lightning==1.2.10
-    - torch==1.8.1
+    - pyyaml==5.3.1
+    - requests==2.25.1
+    - requests-oauthlib==1.3.0
+    - rsa==4.7.2
+    - tensorboard==2.4.1
+    - tensorboard-plugin-wit==1.8.0
+    - toml==0.10.2
     - torchmetrics==0.2.0
+    - tqdm==4.60.0
     - typing-extensions==3.10.0.0
+    - urllib3==1.26.4
+    - virtualenv==20.4.6
+    - werkzeug==2.0.0
+    - yapf==0.31.0
     - yarl==1.6.3
