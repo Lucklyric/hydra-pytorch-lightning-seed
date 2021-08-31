@@ -1,4 +1,4 @@
-# @package _group_
+# @package  data
 _target_: data.mnist_data_module.DummyMNISTDataModule
 test_batch_size: 256
 noise_level: 0.3

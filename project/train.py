@@ -39,7 +39,7 @@ def main(cfg: DictConfig):
     train_dataloader = data_module.train_dataloader()
     val_dataloader = data_module.val_dataloader()
     trainer.fit(model,
-                train_dataloader=train_dataloader,
+                train_dataloaders=train_dataloader,
                 val_dataloaders=[val_dataloader])
 
 

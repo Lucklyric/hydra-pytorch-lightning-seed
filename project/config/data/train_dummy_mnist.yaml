@@ -1,4 +1,4 @@
-# @package _group_
+# @package data
 _target_: data.mnist_data_module.DummyMNISTDataModule
 train_batch_size: 128
 val_batch_size: 32

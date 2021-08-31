@@ -1,4 +1,5 @@
 defaults:
+  - _self_
   - model: dncnn_small
   - data: test_dummy_mnist
 pl_trainer:
